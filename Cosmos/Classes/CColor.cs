@@ -11,6 +11,7 @@ namespace Cosmos
             Teal,
             Red,
             Blue,
+            HKS41,
             Yellow,
             Green,
 
@@ -37,6 +38,8 @@ namespace Cosmos
                     return "#FFCB2030";
                 case Theme.Blue:
                     return "#FF007ACC";
+                case Theme.HKS41:
+                    return "#FF00305d";
                 case Theme.Yellow:
                     return "#FFE7AD00";
                 case Theme.Green:

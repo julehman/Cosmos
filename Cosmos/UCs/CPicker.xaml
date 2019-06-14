@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="Cosmos.CPicker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Cosmos"
+             mc:Ignorable="d" Height="200" Width="382" HorizontalAlignment="Left" VerticalAlignment="Top">
+    <Grid Loaded="Grid_Loaded">
+        <Grid HorizontalAlignment="Left" Width="120" Height="160" VerticalAlignment="Top" Margin="10,10,0,0">
+            <Rectangle x:Name="rct_transparent" HorizontalAlignment="Left" StrokeThickness="1" Width="120" Height="160" VerticalAlignment="Top" SnapsToDevicePixels="True">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/Cosmos;component/Images/transparent1.png" Stretch="UniformToFill" TileMode="FlipXY"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="RCT_color" HorizontalAlignment="Left" StrokeThickness="1" Width="120" Fill="Red" Height="160" VerticalAlignment="Top" SnapsToDevicePixels="True"/>
+            <local:CTextBox x:Name="TB_g" C_SelectOnFocus="True" C_ForegroundTheme="White" HorizontalAlignment="Left" Height="26" Margin="37,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center" FontSize="16" TextChanged="TB_rgb_TextChanged"/>
+            <local:CTextBox x:Name="TB_b" C_SelectOnFocus="True" C_ForegroundTheme="White" HorizontalAlignment="Left" Height="26" Margin="37,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center" FontSize="16" TextChanged="TB_rgb_TextChanged"/>
+            <local:CTextBox x:Name="TB_a" C_SelectOnFocus="True" C_ForegroundTheme="White" HorizontalAlignment="Left" Height="26" Margin="37,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center" FontSize="16" TextChanged="TB_a_TextChanged"/>
+            <local:CTextBox x:Name="TB_r" C_SelectOnFocus="True" C_ForegroundTheme="White" HorizontalAlignment="Left" Height="26" Margin="37,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Center" FontSize="16" TextChanged="TB_a_TextChanged"/>
+            <local:CLabel x:Name="L_r" Content="R" Width="17" HorizontalContentAlignment="Center" Margin="15,26,0,0" Height="18"/>
+            <local:CLabel x:Name="L_g" Content="G" Width="17" HorizontalContentAlignment="Center" Margin="15,57,0,0" Height="18"/>
+            <local:CLabel x:Name="L_b" Content="B" Width="17" HorizontalContentAlignment="Center" Margin="15,87,0,0" Height="19"/>
+            <local:CLabel x:Name="L_a" Content="A" Width="17" HorizontalContentAlignment="Center" Margin="15,119,0,0" Height="18"/>
+        </Grid>
+        <Rectangle x:Name="RCT_gradient" Height="160" Margin="130,10,0,0" StrokeThickness="1" MouseLeftButtonDown="RCT_gradient_MouseLeftButtonDown" VerticalAlignment="Top" MouseLeftButtonUp="RCT_gradient_MouseLeftButtonUp" MouseMove="RCT_gradient_MouseMove" Fill="#FF818181" HorizontalAlignment="Left" Width="240" SnapsToDevicePixels="True" />
+        <Rectangle x:Name="RCT_supergradient" Height="10" Margin="10,180,0,0" StrokeThickness="1" VerticalAlignment="Top" MouseLeftButtonDown="RCT_supergradient_MouseLeftButtonDown" MouseLeftButtonUp="RCT_supergradient_MouseLeftButtonUp" MouseMove="RCT_supergradient_MouseMove" HorizontalAlignment="Left" Width="360" RadiusX="5" RadiusY="5" SnapsToDevicePixels="True" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                    <GradientStop Color="#FF0000"/>
+                    <GradientStop Color="#FFFF00" Offset="0.167"/>
+                    <GradientStop Color="#00FF00" Offset="0.333"/>
+                    <GradientStop Color="#00FFFF" Offset="0.5"/>
+                    <GradientStop Color="#0000FF" Offset="0.667"/>
+                    <GradientStop Color="#FF00FF" Offset="0.833"/>
+                    <GradientStop Color="#FF0000" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Ellipse x:Name="E_cursor" HorizontalAlignment="Left" Height="20" Margin="360,0,0,0" StrokeThickness="2" VerticalAlignment="Top" Width="20" MouseMove="E_cursor_MouseMove" MouseLeftButtonDown="E_cursor_MouseLeftButtonDown" MouseLeftButtonUp="E_cursor_MouseLeftButtonUp" Stroke="White" Fill="Red">
+            <Ellipse.BitmapEffect>
+                <DropShadowBitmapEffect Color="Black" Direction="-45" ShadowDepth="2" Softness=".2" />
+            </Ellipse.BitmapEffect>
+        </Ellipse>
+        <Ellipse x:Name="E_supercursor" SnapsToDevicePixels="True" Stroke="White" HorizontalAlignment="Left" Height="20" Margin="0,175,0,0" StrokeThickness="2" VerticalAlignment="Top" Width="20" MouseLeftButtonDown="E_supercursor_MouseLeftButtonDown" MouseLeftButtonUp="E_supercursor_MouseLeftButtonUp" MouseMove="E_supercursor_MouseMove" Fill="Red">
+            <Ellipse.BitmapEffect>
+                <DropShadowBitmapEffect Color="Black" Direction="-45" ShadowDepth="2" Softness=".2" />
+            </Ellipse.BitmapEffect>
+        </Ellipse>
+    </Grid>
+</UserControl>

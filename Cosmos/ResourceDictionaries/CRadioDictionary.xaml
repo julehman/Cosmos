@@ -1,0 +1,83 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Cosmos">
+    
+    <Style TargetType="{x:Type local:CRadio}">
+        <Setter Property="Content" Value="CRadioButton"/>
+        <Setter Property="BorderBrush" Value="#FF999999"/>
+        <Setter Property="Width" Value="120"/>
+        <Setter Property="Height" Value="23"/>
+        <Setter Property="MinWidth" Value="23"/>
+        <Setter Property="MinHeight" Value="23"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="OpacityMask" Value="#FF007ACC"/>
+        <Setter Property="FontFamily" Value="/Cosmos;component/Fonts/#Circular Std Medium"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="inner" Storyboard.TargetProperty="StrokeThickness" To="0" Duration="0:0:0.1"/>
+                                        <DoubleAnimation Storyboard.TargetName="outer" Storyboard.TargetProperty="StrokeThickness" To="2" Duration="0:0:0.1"/>
+
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="inner" Storyboard.TargetProperty="StrokeThickness" To="3" Duration="0:0:0.1"/>
+                                        <DoubleAnimation Storyboard.TargetName="outer" Storyboard.TargetProperty="StrokeThickness" To="3" Duration="0:0:0.1"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CheckStates">
+                                <VisualState x:Name="Unchecked">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="innerTransform" Storyboard.TargetProperty="ScaleX" To="0" Duration="0:0:0.1"/>
+                                        <DoubleAnimation Storyboard.TargetName="innerTransform" Storyboard.TargetProperty="ScaleY" To="0" Duration="0:0:0.1"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Checked">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="innerTransform" Storyboard.TargetProperty="ScaleX" To="0.5" Duration="0:0:0.1"/>
+                                        <DoubleAnimation Storyboard.TargetName="innerTransform" Storyboard.TargetProperty="ScaleY" To="0.5" Duration="0:0:0.1"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Indeterminate">
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid>
+                            <ContentPresenter x:Name="content" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="32,2,0,0"/>
+                            <Grid HorizontalAlignment="Left" x:Name="box">
+                                <Ellipse x:Name="outer" Height="21" Width="21" Fill="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="3" />
+                                <Ellipse x:Name="inner" Height="23" Width="23" Fill="{TemplateBinding OpacityMask}" HorizontalAlignment="Center" StrokeThickness="2" Stroke="Transparent" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                                    <Ellipse.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform x:Name="innerTransform"/>
+                                            <SkewTransform/>
+                                            <RotateTransform/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Ellipse.RenderTransform>
+                                </Ellipse>
+
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

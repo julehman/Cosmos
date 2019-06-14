@@ -1,0 +1,18 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Cosmos">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Cosmos;component/ResourceDictionaries/CButtonDictionary.xaml"/>
+        <ResourceDictionary Source="/Cosmos;component/ResourceDictionaries/CInfoButtonDictionary.xaml"/>
+        <ResourceDictionary Source="/Cosmos;component/ResourceDictionaries/CCheckBoxDictionary.xaml"/>
+        <ResourceDictionary Source="/Cosmos;component/ResourceDictionaries/CLabelDictionary.xaml"/>
+        <ResourceDictionary Source="/Cosmos;component/ResourceDictionaries/CTextBlockDictionary.xaml"/>
+        <ResourceDictionary Source="/Cosmos;component/ResourceDictionaries/CTextBoxDictionary.xaml"/>
+        <ResourceDictionary Source="/Cosmos;component/ResourceDictionaries/CToggleDictionary.xaml"/>
+        <ResourceDictionary Source="/Cosmos;component/ResourceDictionaries/CRadioDictionary.xaml"/>
+        <ResourceDictionary Source="/Cosmos;component/ResourceDictionaries/CComboBoxDictionary.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

@@ -1,4 +1,5 @@
-﻿using System.Windows.Media;
+﻿using System.Windows.Markup;
+using System.Windows.Media;
 
 namespace Cosmos
 {
@@ -12,6 +13,7 @@ namespace Cosmos
             Red,
             Blue,
             HKS41,
+            HKS44,
             Yellow,
             Green,
 
@@ -19,6 +21,7 @@ namespace Cosmos
             White,
             Gray,
         }
+
 
         public static Brush GetColorBrush(Theme theme)
         {
@@ -40,6 +43,8 @@ namespace Cosmos
                     return "#FF007ACC";
                 case Theme.HKS41:
                     return "#FF00305d";
+                case Theme.HKS44:
+                    return "#FF006ab2";
                 case Theme.Yellow:
                     return "#FFE7AD00";
                 case Theme.Green:

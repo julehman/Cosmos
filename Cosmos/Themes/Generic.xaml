@@ -13,6 +13,7 @@
         <ResourceDictionary Source="/Cosmos;component/ResourceDictionaries/CToggleDictionary.xaml"/>
         <ResourceDictionary Source="/Cosmos;component/ResourceDictionaries/CRadioDictionary.xaml"/>
         <ResourceDictionary Source="/Cosmos;component/ResourceDictionaries/CComboBoxDictionary.xaml"/>
+        <ResourceDictionary Source="/Cosmos;component/ResourceDictionaries/CWindowCloseButtonDictionary.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

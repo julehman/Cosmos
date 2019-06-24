@@ -55,6 +55,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ResourceDictionaries\CTabControlDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionaries\CTabItemDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ResourceDictionaries\CWindowCloseButtonDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -109,6 +117,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\CTabControl.cs" />
+    <Compile Include="Controls\CTabItem.cs" />
     <Compile Include="Controls\CWindowCloseButton.cs" />
     <Compile Include="ControlWindows\CPickerWindow.xaml.cs">
       <DependentUpon>CPickerWindow.xaml</DependentUpon>

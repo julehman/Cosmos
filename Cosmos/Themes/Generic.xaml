@@ -14,6 +14,8 @@
         <ResourceDictionary Source="/Cosmos;component/ResourceDictionaries/CRadioDictionary.xaml"/>
         <ResourceDictionary Source="/Cosmos;component/ResourceDictionaries/CComboBoxDictionary.xaml"/>
         <ResourceDictionary Source="/Cosmos;component/ResourceDictionaries/CWindowCloseButtonDictionary.xaml"/>
+        <ResourceDictionary Source="/Cosmos;component/ResourceDictionaries/CTabControlDictionary.xaml"/>
+        <ResourceDictionary Source="/Cosmos;component/ResourceDictionaries/CTabItemDictionary.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

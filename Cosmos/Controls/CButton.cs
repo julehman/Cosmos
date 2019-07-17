@@ -104,41 +104,40 @@ namespace Cosmos
 
         protected override void OnMouseEnter(MouseEventArgs e)
         {
-            Backcolor = this.Background.ToString();
+            //Backcolor = this.Background.ToString();
 
-            ColorAnimation colorChangeAnimation = new ColorAnimation
-            {
-                To = ChangeColorBrightness((Color)ColorConverter.ConvertFromString(Backcolor), (float)0.15),
-                Duration = new Duration(new TimeSpan(0, 0, 0, 0, 100))
-            };
+            //ColorAnimation colorChangeAnimation = new ColorAnimation
+            //{
+            //    To = ChangeColorBrightness((Color)ColorConverter.ConvertFromString(Backcolor), (float)0.15),
+            //    Duration = new Duration(new TimeSpan(0, 0, 0, 0, 100))
+            //};
 
-            PropertyPath colorTargetPath = new PropertyPath("(Background).(SolidColorBrush.Color)");
-            Storyboard CellBackgroundChangeStory = new Storyboard();
-            Storyboard.SetTarget(colorChangeAnimation, this);
-            Storyboard.SetTargetProperty(colorChangeAnimation, colorTargetPath);
-            CellBackgroundChangeStory.Children.Add(colorChangeAnimation);
-            CellBackgroundChangeStory.Begin();
+            //PropertyPath colorTargetPath = new PropertyPath("(Background).(SolidColorBrush.Color)");
+            //Storyboard CellBackgroundChangeStory = new Storyboard();
+            //Storyboard.SetTarget(colorChangeAnimation, this);
+            //Storyboard.SetTargetProperty(colorChangeAnimation, colorTargetPath);
+            //CellBackgroundChangeStory.Children.Add(colorChangeAnimation);
+            //CellBackgroundChangeStory.Begin();
         }
 
         protected override void OnMouseLeave(MouseEventArgs e)
         {
-            ColorAnimation colorChangeAnimation = new ColorAnimation
-            {
-                To = (Color)ColorConverter.ConvertFromString(Backcolor),
-                Duration = new Duration(new TimeSpan(0, 0, 0, 0, 100))
-            };
+            //ColorAnimation colorChangeAnimation = new ColorAnimation
+            //{
+            //    To = (Color)ColorConverter.ConvertFromString(Backcolor),
+            //    Duration = new Duration(new TimeSpan(0, 0, 0, 0, 100))
+            //};
 
-            PropertyPath colorTargetPath = new PropertyPath("(Background).(SolidColorBrush.Color)");
-            Storyboard CellBackgroundChangeStory = new Storyboard();
-            Storyboard.SetTarget(colorChangeAnimation, this);
-            Storyboard.SetTargetProperty(colorChangeAnimation, colorTargetPath);
-            CellBackgroundChangeStory.Children.Add(colorChangeAnimation);
-            CellBackgroundChangeStory.Begin();
+            //PropertyPath colorTargetPath = new PropertyPath("(Background).(SolidColorBrush.Color)");
+            //Storyboard CellBackgroundChangeStory = new Storyboard();
+            //Storyboard.SetTarget(colorChangeAnimation, this);
+            //Storyboard.SetTargetProperty(colorChangeAnimation, colorTargetPath);
+            //CellBackgroundChangeStory.Children.Add(colorChangeAnimation);
+            //CellBackgroundChangeStory.Begin();
         }
 
         protected override void OnClick()
         {
-            Thread.Sleep(10);
             base.OnClick();
         }
 

@@ -55,6 +55,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ResourceDictionaries\CImageTopMenuDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ResourceDictionaries\CTabControlDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -117,6 +121,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\CImageTopMenuButton.cs" />
     <Compile Include="Controls\CTabControl.cs" />
     <Compile Include="Controls\CTabItem.cs" />
     <Compile Include="Controls\CWindowCloseButton.cs" />
@@ -157,6 +162,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Resource Include="Fonts\CircularStd-Medium.otf" />
+    <Resource Include="Fonts\CircularStd-Book.otf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -197,6 +203,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ImageButton\lock_open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ImageButton\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ImageButton\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ImageButton\profile_special.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ImageButton\profile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

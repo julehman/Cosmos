@@ -16,6 +16,7 @@
         <ResourceDictionary Source="/Cosmos;component/ResourceDictionaries/CWindowCloseButtonDictionary.xaml"/>
         <ResourceDictionary Source="/Cosmos;component/ResourceDictionaries/CTabControlDictionary.xaml"/>
         <ResourceDictionary Source="/Cosmos;component/ResourceDictionaries/CTabItemDictionary.xaml"/>
+        <ResourceDictionary Source="/Cosmos;component/ResourceDictionaries/CImageTopMenuDictionary.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

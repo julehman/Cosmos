@@ -59,7 +59,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ResourceDictionaries\CImageTopMenuDictionary.xaml">
+    <Page Include="ResourceDictionaries\CIconTextHorizontalButtonDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionaries\CIconTextVerticalButtonDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -127,7 +131,8 @@
   <ItemGroup>
     <Compile Include="Classes\CImage.cs" />
     <Compile Include="Controls\CIconButton.cs" />
-    <Compile Include="Controls\CImageTopMenuButton.cs" />
+    <Compile Include="Controls\CIconTextHorizontalButton.cs" />
+    <Compile Include="Controls\CIconTextVerticalButton.cs" />
     <Compile Include="Controls\CTabControl.cs" />
     <Compile Include="Controls\CTabItem.cs" />
     <Compile Include="Controls\CWindowCloseButton.cs" />

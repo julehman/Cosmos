@@ -9,16 +9,15 @@ using System.Windows.Media.Imaging;
 
 namespace Cosmos
 {
-    public class CImageTopMenuButton : Button
+    public class CIconTextHorizontalButton : Button
     {
-        public static readonly DependencyProperty ButtonTypeProperty = DependencyProperty.Register("C_ButtonType", typeof(CImage.ImageType), typeof(CImageTopMenuButton), new PropertyMetadata(new PropertyChangedCallback(ButtonTypeValueChanged)));
-        public static readonly DependencyProperty ButtonTextProperty = DependencyProperty.Register("C_ButtonText", typeof(string), typeof(CImageTopMenuButton), new PropertyMetadata(new PropertyChangedCallback(ButtonTextValueChanged)));
+        public static readonly DependencyProperty ButtonTypeProperty = DependencyProperty.Register("C_ButtonType", typeof(CImage.ImageType), typeof(CIconTextHorizontalButton), new PropertyMetadata(new PropertyChangedCallback(ButtonTypeValueChanged)));
+        public static readonly DependencyProperty ButtonTextProperty = DependencyProperty.Register("C_ButtonText", typeof(string), typeof(CIconTextHorizontalButton), new PropertyMetadata(new PropertyChangedCallback(ButtonTextValueChanged)));
 
-   
 
-        static CImageTopMenuButton()
+        static CIconTextHorizontalButton()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(CImageTopMenuButton), new FrameworkPropertyMetadata(typeof(CImageTopMenuButton)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(CIconTextHorizontalButton), new FrameworkPropertyMetadata(typeof(CIconTextHorizontalButton)));
         }
 
         public CImage.ImageType C_ButtonType
@@ -47,7 +46,7 @@ namespace Cosmos
 
         private static void ButtonTextValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var control = (CImageTopMenuButton)d;
+            var control = (CIconTextHorizontalButton)d;
 
             string newText = (string)e.NewValue;
 
@@ -56,7 +55,7 @@ namespace Cosmos
 
         private static void ButtonTypeValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var control = (CImageTopMenuButton)d;
+            var control = (CIconTextHorizontalButton)d;
 
             CImage.ImageType newType = (CImage.ImageType)e.NewValue;
 
@@ -71,7 +70,7 @@ namespace Cosmos
 
         protected override void OnMouseEnter(MouseEventArgs e)
         {
-            string backcolor = "#22000000";
+            string backcolor = "#44000000";
 
             ColorAnimation colorChangeAnimation = new ColorAnimation
             {
@@ -132,7 +131,7 @@ namespace Cosmos
         {
             base.OnMouseLeftButtonDown(e);
 
-            string backcolor = "#11000000";
+            string backcolor = "#55000000";
 
             ColorAnimation colorChangeAnimation = new ColorAnimation
             {

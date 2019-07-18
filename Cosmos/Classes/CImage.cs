@@ -10,6 +10,7 @@ namespace Cosmos.Classes
     {
         /// <summary>
         /// Overview on https://material.io/tools/icons/?style=baseline
+        /// Available under Apache license version 2.0.
         /// </summary>
         public enum ImageType
         {

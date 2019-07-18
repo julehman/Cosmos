@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cosmos.Classes;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -10,16 +11,7 @@ namespace Cosmos
 {
     public class CImageTopMenuButton : Button
     {
-        public enum ImageButtonType
-        {
-            Profile,
-            Profile_Special,
-            Plus,
-            Minus,
-            Lock_Open,
-        }
-
-        public static readonly DependencyProperty ButtonTypeProperty = DependencyProperty.Register("C_ButtonType", typeof(ImageButtonType), typeof(CImageTopMenuButton), new PropertyMetadata(new PropertyChangedCallback(ButtonTypeValueChanged)));
+        public static readonly DependencyProperty ButtonTypeProperty = DependencyProperty.Register("C_ButtonType", typeof(CImage.ImageType), typeof(CImageTopMenuButton), new PropertyMetadata(new PropertyChangedCallback(ButtonTypeValueChanged)));
         public static readonly DependencyProperty ButtonTextProperty = DependencyProperty.Register("C_ButtonText", typeof(string), typeof(CImageTopMenuButton), new PropertyMetadata(new PropertyChangedCallback(ButtonTextValueChanged)));
 
    
@@ -29,11 +21,11 @@ namespace Cosmos
             DefaultStyleKeyProperty.OverrideMetadata(typeof(CImageTopMenuButton), new FrameworkPropertyMetadata(typeof(CImageTopMenuButton)));
         }
 
-        public ImageButtonType C_ButtonType
+        public CImage.ImageType C_ButtonType
         {
             get
             {
-                return (ImageButtonType)GetValue(ButtonTypeProperty);
+                return (CImage.ImageType)GetValue(ButtonTypeProperty);
             }
             set
             {
@@ -53,11 +45,6 @@ namespace Cosmos
             }
         }
 
-        private static string GetPathByType(ImageButtonType type)
-        {
-            return type.ToString() + ".png";
-        }
-
         private static void ButtonTextValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var control = (CImageTopMenuButton)d;
@@ -71,9 +58,9 @@ namespace Cosmos
         {
             var control = (CImageTopMenuButton)d;
 
-            ImageButtonType newType = (ImageButtonType)e.NewValue;
+            CImage.ImageType newType = (CImage.ImageType)e.NewValue;
 
-            string imagePath = "pack://application:,,,/Cosmos;component/Images/ImageButton/" + GetPathByType(newType);
+            string imagePath = CImage.GetImagePath(newType);
 
             Image imgBrush = new Image();
             imgBrush.Source = new BitmapImage(new Uri(imagePath, UriKind.Absolute));

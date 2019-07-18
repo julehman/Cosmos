@@ -18,6 +18,7 @@
         <ResourceDictionary Source="/Cosmos;component/ResourceDictionaries/CTabItemDictionary.xaml"/>
         <ResourceDictionary Source="/Cosmos;component/ResourceDictionaries/CIconTextVerticalButtonDictionary.xaml"/>
         <ResourceDictionary Source="/Cosmos;component/ResourceDictionaries/CIconTextHorizontalButtonDictionary.xaml"/>
+        <ResourceDictionary Source="/Cosmos;component/ResourceDictionaries/CIconButtonDictionary.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

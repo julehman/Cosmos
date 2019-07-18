@@ -70,7 +70,7 @@ namespace Cosmos
 
         protected override void OnMouseEnter(MouseEventArgs e)
         {
-            string backcolor = "#22000000";
+            string backcolor = "#44000000";
 
             ColorAnimation colorChangeAnimation = new ColorAnimation
             {
@@ -131,7 +131,7 @@ namespace Cosmos
         {
             base.OnMouseLeftButtonDown(e);
 
-            string backcolor = "#11000000";
+            string backcolor = "#55000000";
 
             ColorAnimation colorChangeAnimation = new ColorAnimation
             {

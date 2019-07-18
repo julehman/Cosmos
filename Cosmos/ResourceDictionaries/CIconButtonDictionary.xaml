@@ -6,7 +6,7 @@
         <Setter Property="FontFamily" Value="/Cosmos;component/Fonts/#Circular Std Medium"/>
         <Setter Property="Content">
             <Setter.Value>
-                <Image Source="/Cosmos;component/Images/ImageButton/add.png"/>
+                <Image Source="/Cosmos;component/Images/close.png"/>
             </Setter.Value>
         </Setter>
         <Setter Property="HorizontalAlignment" Value="Right"/>

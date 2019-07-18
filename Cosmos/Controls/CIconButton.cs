@@ -36,7 +36,7 @@ namespace Cosmos
 
             CImage.ImageType newType = (CImage.ImageType)e.NewValue;
             string path = CImage.GetImagePath(newType);
-            control.Content = new Image { Source = new BitmapImage(new Uri(path, UriKind.Relative)), VerticalAlignment = VerticalAlignment.Center, Stretch = Stretch.Fill };
+            control.Content = new Image { Source = new BitmapImage(new Uri(path, UriKind.Absolute)), VerticalAlignment = VerticalAlignment.Center, Stretch = Stretch.Fill };
 
         }
 

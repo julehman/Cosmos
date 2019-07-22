@@ -3,7 +3,6 @@
                     xmlns:local="clr-namespace:Cosmos">
 
     <Style TargetType="{x:Type local:CButton}">
-        <Setter Property="FontFamily" Value="/Cosmos;component/Fonts/#Circular Std Medium"/>
         <Setter Property="Content" Value="CButton"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Top"/>

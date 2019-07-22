@@ -3,7 +3,6 @@
                     xmlns:local="clr-namespace:Cosmos">
 
     <Style TargetType="{x:Type local:CLabel}">
-        <Setter Property="FontFamily" Value="/Cosmos;component/Fonts/#Circular Std Medium"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="Content" Value="CLabel"/>
         <Setter Property="Foreground" Value="#FF111111"/>

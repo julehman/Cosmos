@@ -3,7 +3,6 @@
                     xmlns:local="clr-namespace:Cosmos">
 
     <Style TargetType="{x:Type local:CTextBox}">
-        <Setter Property="FontFamily" Value="/Cosmos;component/Fonts/#Circular Std Medium"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="Height" Value="27"/>

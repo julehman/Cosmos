@@ -3,7 +3,6 @@
                     xmlns:local="clr-namespace:Cosmos">
 
     <Style TargetType="{x:Type local:CIconTextVerticalButton}">
-        <Setter Property="FontFamily" Value="/Cosmos;component/Fonts/#Circular Std Book"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>

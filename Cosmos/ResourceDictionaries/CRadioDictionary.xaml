@@ -11,7 +11,6 @@
         <Setter Property="MinHeight" Value="23"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="OpacityMask" Value="#FF007ACC"/>
-        <Setter Property="FontFamily" Value="/Cosmos;component/Fonts/#Circular Std Medium"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Top"/>

@@ -3,7 +3,6 @@
                     xmlns:local="clr-namespace:Cosmos">
 
     <Style TargetType="{x:Type local:CTextBlock}">
-        <Setter Property="FontFamily" Value="/Cosmos;component/Fonts/#Circular Std Medium"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="Foreground" Value="#FF111111"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>

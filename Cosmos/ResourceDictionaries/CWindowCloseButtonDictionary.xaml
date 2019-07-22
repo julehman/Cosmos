@@ -3,7 +3,6 @@
                     xmlns:local="clr-namespace:Cosmos">
 
     <Style TargetType="{x:Type local:CWindowCloseButton}">
-        <Setter Property="FontFamily" Value="/Cosmos;component/Fonts/#Circular Std Medium"/>
         <Setter Property="Content">
             <Setter.Value>
                 <Image Source="/Cosmos;component/Images/close.png"/>

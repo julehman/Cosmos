@@ -58,7 +58,6 @@
         <Setter Property="MinHeight" Value="23"/>
         <Setter Property="Height" Value="27"/>
         <Setter Property="FontSize" Value="14"/>
-        <Setter Property="FontFamily" Value="/Cosmos;component/Fonts/#Circular Std Medium"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ComboBox}">

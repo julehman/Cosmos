@@ -12,6 +12,7 @@ namespace Cosmos
     {
         public enum ButtonType
         {
+            None,
             Close,
             Size,
             Down,
@@ -53,6 +54,10 @@ namespace Cosmos
             else if (newType == ButtonType.Size)
             {
                 control.Content = new Image { Source = new BitmapImage(new Uri("/Cosmos;component/Images/size.png", UriKind.Relative)), VerticalAlignment = VerticalAlignment.Center, Stretch = Stretch.Fill };
+            }
+            else if (newType == ButtonType.None)
+            {
+                control.Content = null;
             }
         }
 

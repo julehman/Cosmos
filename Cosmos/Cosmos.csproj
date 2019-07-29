@@ -75,7 +75,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ResourceDictionaries\CWindowCloseButtonDictionary.xaml">
+    <Page Include="ResourceDictionaries\CWindowControlButtonDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -135,7 +135,7 @@
     <Compile Include="Controls\CIconTextVerticalButton.cs" />
     <Compile Include="Controls\CTabControl.cs" />
     <Compile Include="Controls\CTabItem.cs" />
-    <Compile Include="Controls\CWindowCloseButton.cs" />
+    <Compile Include="Controls\CWindowControlButton.cs" />
     <Compile Include="ControlWindows\CPickerWindow.xaml.cs">
       <DependentUpon>CPickerWindow.xaml</DependentUpon>
     </Compile>

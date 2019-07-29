@@ -8,21 +8,21 @@ using System.Windows.Media.Imaging;
 
 namespace Cosmos
 {
-    public class CWindowCloseButton : Button
+    public class CWindowControlButton : Button
     {
         public enum ButtonType
         {
             None,
             Close,
-            Size,
-            Down,
+            Maximize,
+            Minimize,
         }
 
-        public static readonly DependencyProperty ButtonTypeProperty = DependencyProperty.Register("C_ButtonType", typeof(ButtonType), typeof(CWindowCloseButton), new PropertyMetadata(new PropertyChangedCallback(ButtonTypeValueChanged)));
+        public static readonly DependencyProperty ButtonTypeProperty = DependencyProperty.Register("C_ButtonType", typeof(ButtonType), typeof(CWindowControlButton), new PropertyMetadata(new PropertyChangedCallback(ButtonTypeValueChanged)));
 
-        static CWindowCloseButton()
+        static CWindowControlButton()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(CWindowCloseButton), new FrameworkPropertyMetadata(typeof(CWindowCloseButton)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(CWindowControlButton), new FrameworkPropertyMetadata(typeof(CWindowControlButton)));
         }
 
         public ButtonType C_ButtonType
@@ -39,7 +39,7 @@ namespace Cosmos
 
         private static void ButtonTypeValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var control = (CWindowCloseButton)d;
+            var control = (CWindowControlButton)d;
 
             ButtonType newType = (ButtonType)e.NewValue;
 
@@ -47,17 +47,44 @@ namespace Cosmos
             {
                 control.Content = new Image { Source = new BitmapImage(new Uri("/Cosmos;component/Images/close.png", UriKind.Relative)), VerticalAlignment = VerticalAlignment.Center, Stretch = Stretch.Fill };
             }
-            else if (newType == ButtonType.Down)
+            else if (newType == ButtonType.Minimize)
             {
                 control.Content = new Image { Source = new BitmapImage(new Uri("/Cosmos;component/Images/down.png", UriKind.Relative)), VerticalAlignment = VerticalAlignment.Center, Stretch = Stretch.Fill };
             }
-            else if (newType == ButtonType.Size)
+            else if (newType == ButtonType.Maximize)
             {
                 control.Content = new Image { Source = new BitmapImage(new Uri("/Cosmos;component/Images/size.png", UriKind.Relative)), VerticalAlignment = VerticalAlignment.Center, Stretch = Stretch.Fill };
             }
             else if (newType == ButtonType.None)
             {
                 control.Content = null;
+            }
+        }
+        protected override void OnClick()
+        {
+            base.OnClick();
+            Window parentWindow = Window.GetWindow(this);
+
+
+            switch (C_ButtonType)
+            {
+                case ButtonType.None:
+                    break;
+                case ButtonType.Close:
+                    parentWindow.Close();
+                    break;
+                case ButtonType.Maximize:
+                    this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
+                    if (parentWindow.WindowState == WindowState.Normal)
+                        parentWindow.WindowState = WindowState.Maximized;
+                    else
+                        parentWindow.WindowState = WindowState.Normal;
+                    break;
+                case ButtonType.Minimize:
+                    parentWindow.WindowState = WindowState.Minimized;
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -67,7 +94,7 @@ namespace Cosmos
 
             if (C_ButtonType == ButtonType.Close)
                 backcolor = "#FFE81123";
-            else if (C_ButtonType == ButtonType.Down || C_ButtonType == ButtonType.Size)
+            else if (C_ButtonType == ButtonType.Minimize || C_ButtonType == ButtonType.Maximize)
                 backcolor = "#22FFFFFF";
 
             ColorAnimation colorChangeAnimation = new ColorAnimation
@@ -133,7 +160,7 @@ namespace Cosmos
 
             if (C_ButtonType == ButtonType.Close)
                 backcolor = "#FFE81123";
-            else if (C_ButtonType == ButtonType.Down || C_ButtonType == ButtonType.Size)
+            else if (C_ButtonType == ButtonType.Minimize || C_ButtonType == ButtonType.Maximize)
                 backcolor = "#22FFFFFF";
 
             ColorAnimation colorChangeAnimation = new ColorAnimation
@@ -167,9 +194,5 @@ namespace Cosmos
             CellBackgroundChangeStory.Begin();
         }
 
-        protected override void OnClick()
-        {
-            base.OnClick();
-        }
     }
 }

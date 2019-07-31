@@ -79,10 +79,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UCs\CMultiSlider.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="ResourceDictionaries\CInfoButtonDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -127,6 +123,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Windows\CMessageBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\CImage.cs" />
@@ -138,9 +138,6 @@
     <Compile Include="Controls\CWindowControlButton.cs" />
     <Compile Include="ControlWindows\CPickerWindow.xaml.cs">
       <DependentUpon>CPickerWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UCs\CMultiSlider.xaml.cs">
-      <DependentUpon>CMultiSlider.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\CInfoButton.cs" />
     <Compile Include="Controls\CComboBox.cs" />
@@ -167,6 +164,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Windows\CMessageBox.xaml.cs">
+      <DependentUpon>CMessageBox.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

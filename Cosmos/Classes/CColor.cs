@@ -3,7 +3,7 @@ using System.Windows.Media;
 
 namespace Cosmos
 {
-    static public class CColor
+    public static class CColor
     {
         public enum Theme
         {

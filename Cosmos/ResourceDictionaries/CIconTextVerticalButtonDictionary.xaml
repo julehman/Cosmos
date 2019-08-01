@@ -14,9 +14,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <StackPanel Background="{TemplateBinding Background}">
+                    <StackPanel Background="{TemplateBinding Background}" x:Name="panel">
                         <Grid HorizontalAlignment="Center" Width="30" Height="30" Margin="0,5,0,0">
-                            <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Top" />
                         </Grid>
                         <TextBlock Text="{TemplateBinding Property=ToolTip}" TextWrapping="Wrap" TextAlignment="Center" IsHyphenationEnabled="True" Margin="0,5,0,0" Height="40"/>
                     </StackPanel>

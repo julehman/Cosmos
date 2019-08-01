@@ -1,5 +1,6 @@
 ﻿using Cosmos.Classes;
 using System;
+using System.Media;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -32,6 +33,7 @@ namespace Cosmos.Windows
         public CMessageBox(string message, string caption, CColor.Theme theme, CImage.ImageType image, CMessageBoxButton _buttonType)
         {
             InitializeComponent();
+            SystemSounds.Beep.Play();
 
             string imagePath = CImage.GetImagePath(image);
 

@@ -20,6 +20,7 @@ namespace Cosmos
             Black,
             White,
             Gray,
+            Disabled,
         }
 
 
@@ -56,6 +57,8 @@ namespace Cosmos
                     return "#FFEEEEEE";
                 case Theme.Gray:
                     return "#FF999999";
+                case Theme.Disabled:
+                    return "#67aaaaaa";
                 default:
                     return string.Empty;
             }

@@ -176,8 +176,6 @@
     <Resource Include="Fonts\CircularStd-Book.otf" />
     <Resource Include="Fonts\OpenSans-Regular.ttf" />
     <Resource Include="Fonts\OpenSans-SemiBold.ttf" />
-    <Resource Include="Fonts\BebasNeue-Regular.otf" />
-    <Resource Include="Fonts\made_evolve_sans_medium_evo-webfont.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

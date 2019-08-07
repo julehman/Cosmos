@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
-using static Cosmos.CColor;
+using static Cosmos.Classes.CColor;
 
 namespace Cosmos
 {

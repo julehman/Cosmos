@@ -1,7 +1,6 @@
-﻿using System.Windows.Markup;
-using System.Windows.Media;
+﻿using System.Windows.Media;
 
-namespace Cosmos
+namespace Cosmos.Classes
 {
     public static class CColor
     {
@@ -11,7 +10,6 @@ namespace Cosmos
             
             Teal,
             Red,
-            Blue,
             HKS41,
             HKS44,
             Yellow,
@@ -20,6 +18,7 @@ namespace Cosmos
             Black,
             White,
             Gray,
+            DarkGrey,
             Disabled,
         }
 
@@ -40,8 +39,6 @@ namespace Cosmos
                     return "#FF2c736b";
                 case Theme.Red:
                     return "#FFCB2030";
-                case Theme.Blue:
-                    return "#FF007ACC";
                 case Theme.HKS41:
                     return "#FF00305d";
                 case Theme.HKS44:
@@ -57,6 +54,8 @@ namespace Cosmos
                     return "#FFEEEEEE";
                 case Theme.Gray:
                     return "#FF999999";
+                case Theme.DarkGrey:
+                    return "#FF1D1D1D";
                 case Theme.Disabled:
                     return "#67aaaaaa";
                 default:

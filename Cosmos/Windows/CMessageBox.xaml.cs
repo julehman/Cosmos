@@ -37,8 +37,10 @@ namespace Cosmos.Windows
 
             string imagePath = CImage.GetImagePath(image);
 
-            ImageBrush imgBrush = new ImageBrush();
-            imgBrush.ImageSource = new BitmapImage(new Uri(imagePath, UriKind.Absolute));
+            ImageBrush imgBrush = new ImageBrush
+            {
+                ImageSource = new BitmapImage(new Uri(imagePath, UriKind.Absolute))
+            };
 
             RCT_image.Fill = imgBrush;
 
@@ -75,6 +77,8 @@ namespace Cosmos.Windows
                 default:
                     break;
             }
+
+            B_1.Focus();
         }
 
 

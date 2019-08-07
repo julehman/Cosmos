@@ -123,6 +123,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Windows\CBugReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\CMessageBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -130,6 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\CImage.cs" />
+    <Compile Include="Classes\CValidation.cs" />
     <Compile Include="Controls\CIconButton.cs" />
     <Compile Include="Controls\CIconTextHorizontalButton.cs" />
     <Compile Include="Controls\CIconTextVerticalButton.cs" />
@@ -164,6 +169,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Windows\CBugReport.xaml.cs">
+      <DependentUpon>CBugReport.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\CMessageBox.xaml.cs">
       <DependentUpon>CMessageBox.xaml</DependentUpon>

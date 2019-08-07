@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Cosmos.Windows"
         xmlns:Cosmos="clr-namespace:Cosmos" x:Class="Cosmos.Windows.CMessageBox"
         mc:Ignorable="d"
-        Title="CMessageBox" Height="177" Width="450" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Height="177" Width="450" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid x:Name="GRD_border" Background="#222222">
         <Grid Background="White" Margin="2,0,2,2">
             <Grid x:Name="GRD_header" Height="31" VerticalAlignment="Top" Background="#222222">

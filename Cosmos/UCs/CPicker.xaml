@@ -4,12 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Cosmos"
-             mc:Ignorable="d" Height="200" Width="382" HorizontalAlignment="Left" VerticalAlignment="Top">
+             mc:Ignorable="d" Height="205" Width="390" HorizontalAlignment="Left" VerticalAlignment="Top">
     <Grid Loaded="Grid_Loaded">
         <Grid HorizontalAlignment="Left" Width="120" Height="160" VerticalAlignment="Top" Margin="10,10,0,0">
             <Rectangle x:Name="rct_transparent" HorizontalAlignment="Left" StrokeThickness="1" Width="120" Height="160" VerticalAlignment="Top" SnapsToDevicePixels="True">
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="/Cosmos;component/Images/transparent1.png" Stretch="UniformToFill" TileMode="FlipXY"/>
+                    <ImageBrush ImageSource="/Cosmos;component/Images/transparent.png" Stretch="UniformToFill" TileMode="FlipXY"/>
                 </Rectangle.Fill>
             </Rectangle>
             <Rectangle x:Name="RCT_color" HorizontalAlignment="Left" StrokeThickness="1" Width="120" Fill="Red" Height="160" VerticalAlignment="Top" SnapsToDevicePixels="True"/>

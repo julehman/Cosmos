@@ -41,22 +41,17 @@ namespace Cosmos
 
         public static void OnIsEnabledChanged(DependencyObject sender, DependencyPropertyChangedEventArgs args)
         {
-            var control = sender as CIconTextVerticalButton;
-            if (control != null)
-            {
+            if (sender is CIconTextVerticalButton control)
                 control.UpdateIsEnabled();
-            }
+
             if (!(args.NewValue as bool?).Value)
                 (sender as CIconTextVerticalButton).Background = CColor.GetColorBrush(CColor.Theme.Disabled);
         }
 
         public void UpdateIsEnabled()
         {
-            var content = Content as Control;
-            if (content != null)
-            {
+            if (Content is Control content)
                 content.IsEnabled = IsEnabled;
-            }
         }
 
         private static void ButtonTextValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -76,8 +71,10 @@ namespace Cosmos
 
             string imagePath = CImage.GetImagePath(newType);
 
-            Image imgBrush = new Image();
-            imgBrush.Source = new BitmapImage(new Uri(imagePath, UriKind.Absolute));
+            Image imgBrush = new Image
+            {
+                Source = new BitmapImage(new Uri(imagePath, UriKind.Absolute))
+            };
 
             control.Content = imgBrush;
 
@@ -125,29 +122,6 @@ namespace Cosmos
             CellBackgroundChangeStory.Begin();
         }
 
-        public static Color ChangeColorBrightness(Color color, float correctionFactor)
-        {
-            float red = (float)color.R;
-            float green = (float)color.G;
-            float blue = (float)color.B;
-
-            if (correctionFactor < 0)
-            {
-                correctionFactor = 1 + correctionFactor;
-                red *= correctionFactor;
-                green *= correctionFactor;
-                blue *= correctionFactor;
-            }
-            else
-            {
-                red = (255 - red) * correctionFactor + red;
-                green = (255 - green) * correctionFactor + green;
-                blue = (255 - blue) * correctionFactor + blue;
-            }
-
-            return Color.FromArgb(color.A, (byte)red, (byte)green, (byte)blue);
-        }
-
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
         {
             if (!this.IsEnabled)
@@ -159,7 +133,7 @@ namespace Cosmos
 
             ColorAnimation colorChangeAnimation = new ColorAnimation
             {
-                To = ChangeColorBrightness((Color)ColorConverter.ConvertFromString(backcolor), (float)-0.1),
+                To = CColor.ChangeColorBrightness((Color)ColorConverter.ConvertFromString(backcolor), (float)-0.1),
                 Duration = new Duration(new TimeSpan(0, 0, 0, 0, 100))
             };
 
@@ -179,7 +153,7 @@ namespace Cosmos
             base.OnMouseLeftButtonUp(e);
             ColorAnimation colorChangeAnimation = new ColorAnimation
             {
-                To = ChangeColorBrightness((Color)ColorConverter.ConvertFromString("#00000000"), (float)0.15),
+                To = CColor.ChangeColorBrightness((Color)ColorConverter.ConvertFromString("#00000000"), (float)0.15),
                 Duration = new Duration(new TimeSpan(0, 0, 0, 0, 100))
             };
 

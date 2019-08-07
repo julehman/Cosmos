@@ -5,7 +5,7 @@
     <Style TargetType="{x:Type local:CWindowControlButton}">
         <Setter Property="Content">
             <Setter.Value>
-                <Image Source="/Cosmos;component/Images/close.png"/>
+                <Image Source="/Cosmos;component/Images/Windowcontrol/close.png"/>
             </Setter.Value>
         </Setter>
         <Setter Property="HorizontalAlignment" Value="Right"/>

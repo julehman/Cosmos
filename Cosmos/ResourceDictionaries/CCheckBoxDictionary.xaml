@@ -72,7 +72,7 @@
                                         </TransformGroup>
                                     </Rectangle.RenderTransform>
                                     <Rectangle.OpacityMask>
-                                        <ImageBrush ImageSource="/Cosmos;component/Images/ccheckS.png"/>
+                                        <ImageBrush ImageSource="/Cosmos;component/Images/checkbox.png"/>
                                     </Rectangle.OpacityMask>
                                 </Rectangle>
 

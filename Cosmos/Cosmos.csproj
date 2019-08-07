@@ -208,22 +208,22 @@
     <EmbeddedResource Include="CTextBlock.Icon.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\transparent1.png" />
+    <Resource Include="Images\transparent.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\info.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\ccheckS.png" />
+    <Resource Include="Images\checkbox.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\close.png" />
+    <Resource Include="Images\Windowcontrol\close.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\size.png" />
+    <Resource Include="Images\Windowcontrol\maximize.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\down.png" />
+    <Resource Include="Images\Windowcontrol\minimize.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\ImageButton\3d_rotation_black.png" />

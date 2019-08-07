@@ -35,6 +35,7 @@ namespace Cosmos.Windows
             InitializeComponent();
             SystemSounds.Beep.Play();
 
+            //set image
             string imagePath = CImage.GetImagePath(image);
 
             ImageBrush imgBrush = new ImageBrush
@@ -44,12 +45,16 @@ namespace Cosmos.Windows
 
             RCT_image.Fill = imgBrush;
 
+            //set text / caption
             TBL_message.Text = message;
             L_caption.Content = caption;
 
+            //set theme in border and header background
             GRD_border.Background = CColor.GetColorBrush(theme);
             GRD_header.Background = CColor.GetColorBrush(theme);
 
+
+            //enable button by given buttontype
             buttonType = _buttonType;
 
             switch (buttonType)

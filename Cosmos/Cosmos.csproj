@@ -133,6 +133,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\CEmail.cs" />
     <Compile Include="Classes\CImage.cs" />
     <Compile Include="Classes\CValidation.cs" />
     <Compile Include="Controls\CIconButton.cs" />

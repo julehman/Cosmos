@@ -9,7 +9,13 @@ namespace Cosmos.Windows
 {
     public partial class CBugReport : Window
     {
-        private static string DBPATH = "";
+        private bool database = false;
+
+        private string senderEmail;
+        private string senderPassword;
+        private string addresseeEmail;
+
+        private static string supportDBPath = "";
         private static OleDbCommand dbCommand;
         //private static OleDbDataAdapter dbDataAdapter;
         private static OleDbConnection conn;
@@ -18,20 +24,35 @@ namespace Cosmos.Windows
         /// <summary>
         /// Only for internal database
         /// </summary>
-        public CBugReport(string supportDBPath, string email, string version, string product)
+        public CBugReport(string _supportDBPath, string email, string version, string product)
         {
             InitializeComponent();
+            database = true;
 
-            DBPATH = supportDBPath;
-            connectionstring += DBPATH;
+            supportDBPath = _supportDBPath;
+            connectionstring += supportDBPath;
             conn = new OleDbConnection(connectionstring);
 
-            DBPATH = supportDBPath;
+
             TB_email.Text = email;
             TB_version.Text = version;
             TB_product.Text = product;
-
             //todo: try to get current os and select in cb
+        }
+        public CBugReport(string _addresseeEmail, string _senderEmail, string _senderPassword, string email, string version, string product)
+        {
+            InitializeComponent();
+
+            senderEmail = _senderEmail;
+            senderPassword = _senderPassword;
+            addresseeEmail = _addresseeEmail;
+
+            TB_email.Text = email;
+            TB_version.Text = version;
+            TB_product.Text = product;
+            //todo: try to get current os and select in cb
+
+
         }
 
         private void Rectangle_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -41,35 +62,56 @@ namespace Cosmos.Windows
 
         private void B_send_Click(object sender, RoutedEventArgs e)
         {
-            //check correctness of input data
-            if (TB_description.Text.Replace(" ", string.Empty) == string.Empty || 
-                CB_os.SelectedIndex < 0 ||
-                CB_impact.SelectedIndex < 0 ||
-                (TB_email.Text.Replace(" ", string.Empty) != "" && !CValidation.ValidateEmail(TB_email.Text)))
+            //add bugeport to database
+            if (database)
             {
-                CMessageBox message = new CMessageBox("Bitte füllen sie alle Felder die mit einem * gekennzeichnet sind und überprüfen sie die Daten auf ihre Richtigkeit", "Eingabe Korrigieren", CColor.Theme.DarkGrey, CImage.ImageType.edit_black, CMessageBox.CMessageBoxButton.OK);
-                message.ShowDialog();
-                return;
-            }
-
-            string impact = string.Empty;
-            if (CB_impact.SelectedIndex >= 0)
-                impact = (CB_impact.SelectedItem as ComboBoxItem).Content.ToString();
-
-            try
-            {
-                if (!InsertRequest(TB_email.Text, DateTime.Today, "", false, TB_description.Text, CB_os.Text, CB_priority.Text, TB_version.Text, impact, TB_product.Text))
+                //check correctness of input data
+                if (TB_description.Text.Replace(" ", string.Empty) == string.Empty ||
+                    CB_os.SelectedIndex < 0 ||
+                    CB_impact.SelectedIndex < 0 ||
+                    (TB_email.Text.Replace(" ", string.Empty) != "" && !CValidation.ValidateEmail(TB_email.Text)))
+                {
+                    CMessageBox message = new CMessageBox("Bitte füllen sie alle Felder die mit einem * gekennzeichnet sind und überprüfen sie die Daten auf ihre Richtigkeit", "Eingabe Korrigieren", CColor.Theme.DarkGrey, CImage.ImageType.edit_black, CMessageBox.CMessageBoxButton.OK);
+                    message.ShowDialog();
                     return;
-            }
-            catch (Exception ex)
-            {
-                CMessageBox errormessage = new CMessageBox(ex.InnerException.Message.ToString(), "Datenbankfehler", CColor.Theme.Red, CImage.ImageType.error_outline_black, CMessageBox.CMessageBoxButton.OK);
-                errormessage.ShowDialog();
-                return;
-            }
+                }
 
-            CMessageBox donemessage = new CMessageBox("Vielen Dank.\nIhre Anfrage wird so schnell wie möglich bearbeitet.", "Hinweis", CColor.Theme.DarkGrey, CImage.ImageType.error_outline_black, CMessageBox.CMessageBoxButton.OK);
-            donemessage.ShowDialog();
+                string impact = string.Empty;
+                if (CB_impact.SelectedIndex >= 0)
+                    impact = (CB_impact.SelectedItem as ComboBoxItem).Content.ToString();
+
+                try
+                {
+                    if (!InsertRequest(TB_email.Text, DateTime.Today, "", false, TB_description.Text, CB_os.Text, CB_priority.Text, TB_version.Text, impact, TB_product.Text))
+                        return;
+                }
+                catch (Exception ex)
+                {
+                    CMessageBox errormessage = new CMessageBox(ex.InnerException.Message.ToString(), "Datenbankfehler", CColor.Theme.Red, CImage.ImageType.error_outline_black, CMessageBox.CMessageBoxButton.OK);
+                    errormessage.ShowDialog();
+                    return;
+                }
+
+                CMessageBox donemessage = new CMessageBox("Vielen Dank.\nIhre Anfrage wird so schnell wie möglich bearbeitet.", "Hinweis", CColor.Theme.DarkGrey, CImage.ImageType.error_outline_black, CMessageBox.CMessageBoxButton.OK);
+                donemessage.ShowDialog();
+            }
+            //send bugreport via email
+            else
+            {
+                string impact = string.Empty;
+                if (CB_impact.SelectedIndex >= 0)
+                    impact = (CB_impact.SelectedItem as ComboBoxItem).Content.ToString();
+
+                CEmail.SendEmail(addresseeEmail, senderEmail, senderPassword, "Fehlermeldung", TB_email.Text + "\n" +
+                                                                                               DateTime.Today + "\n" +
+                                                                                               TB_description.Text + "\n" +
+                                                                                               CB_os.Text + "\n" +
+                                                                                               CB_priority.Text + "\n" +
+                                                                                               TB_version.Text + "\n" +
+                                                                                               impact + "\n" +
+                                                                                               TB_product.Text);
+
+            }
 
             Close();
         }
@@ -82,7 +124,7 @@ namespace Cosmos.Windows
             }
             catch
             {
-                CMessageBox message = new CMessageBox("Datenbank \"" + DBPATH + "\" konnte nicht gefunden werden.", "Fehler", CColor.Theme.Red, CImage.ImageType.error_outline_black, CMessageBox.CMessageBoxButton.OK);
+                CMessageBox message = new CMessageBox("Datenbank \"" + supportDBPath + "\" konnte nicht gefunden werden.", "Fehler", CColor.Theme.Red, CImage.ImageType.error_outline_black, CMessageBox.CMessageBoxButton.OK);
                 message.ShowDialog();
                 return false;
             }

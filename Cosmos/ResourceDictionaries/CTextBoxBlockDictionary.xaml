@@ -2,10 +2,11 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:Cosmos">
 
-    <Style TargetType="{x:Type local:CTextBox}">
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    <Style TargetType="{x:Type local:CTextBoxBlock}">
+        <Setter Property="VerticalContentAlignment" Value="Top"/>
         <Setter Property="FontSize" Value="14"/>
-        <Setter Property="Height" Value="27"/>
+        <Setter Property="Height" Value="90"/>
+        <Setter Property="AcceptsReturn" Value="True"/>
         <Setter Property="Width" Value="120"/>
         <Setter Property="Foreground" Value="#FF111111"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -20,19 +21,9 @@
                         <Border 
                             Name="Border"
                             BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="0,0,0,1">
+                            BorderThickness="1">
                             <ScrollViewer Margin="0" x:Name="PART_ContentHost"/>
                         </Border>
-                        <Rectangle x:Name="bottom" Width="{TemplateBinding Width}" Height="2" StrokeThickness="0" Fill="{TemplateBinding BorderBrush}" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5">
-                            <Rectangle.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform x:Name="bottomTransform" ScaleX="0"/>
-                                    <SkewTransform/>
-                                    <RotateTransform/>
-                                    <TranslateTransform/>
-                                </TransformGroup>
-                            </Rectangle.RenderTransform>
-                        </Rectangle>
                     </Grid>
 
                     <ControlTemplate.Triggers>
@@ -45,22 +36,7 @@
                             <Setter TargetName="Border" Property="Background" Value="#60bbbbbb"/>
                             <Setter TargetName="Border" Property="BorderBrush" Value="#60bbbbbb"/>
                         </Trigger>
-                        <Trigger Property="IsFocused" Value="True">
-                            <Trigger.EnterActions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="bottomTransform" Storyboard.TargetProperty="ScaleX" To="1" Duration="0:0:0.1"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.EnterActions>
-                            <Trigger.ExitActions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="bottomTransform" Storyboard.TargetProperty="ScaleX" To="0" Duration="0:0:0.1"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.ExitActions>
-                        </Trigger>
+                       
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

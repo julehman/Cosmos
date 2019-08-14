@@ -52,7 +52,7 @@
             </Cosmos:CComboBox>
             <Cosmos:CLabel HorizontalAlignment="Stretch" Margin="15,595,10,0" VerticalAlignment="Top" Height="28" Content="* Pflichtfelder" Width="Auto"/>
             <Cosmos:CButton x:Name="B_send" C_BackgroundTheme="Red" HorizontalAlignment="Left" Margin="15,640,0,0" VerticalAlignment="Top" Width="113" Content="Senden" Click="B_send_Click"/>
-            <Cosmos:CTextBox x:Name="TB_description" HorizontalAlignment="Left" Height="205" Margin="15,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="416" VerticalContentAlignment="Top"/>
+            <Cosmos:CTextBoxBlock x:Name="TB_description" HorizontalAlignment="Left" Height="205" Margin="15,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="416" VerticalContentAlignment="Top"/>
         </Grid>
     </Grid>
 </Window>

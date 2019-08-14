@@ -75,6 +75,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ResourceDictionaries\CTextBoxBlockDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ResourceDictionaries\CWindowControlButtonDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -141,6 +145,7 @@
     <Compile Include="Controls\CIconTextVerticalButton.cs" />
     <Compile Include="Controls\CTabControl.cs" />
     <Compile Include="Controls\CTabItem.cs" />
+    <Compile Include="Controls\CTextBoxBlock.cs" />
     <Compile Include="Controls\CWindowControlButton.cs" />
     <Compile Include="ControlWindows\CPickerWindow.xaml.cs">
       <DependentUpon>CPickerWindow.xaml</DependentUpon>
@@ -189,24 +194,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="CButton.Icon.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="CCheckBox.Icon.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="CToggle.Icon.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="CTextBox.Icon.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="CLabel.Icon.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="CTextBlock.Icon.bmp" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\transparent.png" />

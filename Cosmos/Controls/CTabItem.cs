@@ -10,6 +10,9 @@ namespace Cosmos
 {
     public class CTabItem : TabItem
     {
+        /// <summary>
+        /// flat style tabitem without borders
+        /// </summary>
         static CTabItem()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(CTabItem), new FrameworkPropertyMetadata(typeof(CTabItem)));

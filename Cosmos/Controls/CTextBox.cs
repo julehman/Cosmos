@@ -15,6 +15,10 @@ namespace Cosmos
 
         public static readonly DependencyProperty NumericProperty = DependencyProperty.Register("C_Numeric", typeof(bool), typeof(CTextBox), new PropertyMetadata(new PropertyChangedCallback(NumericValueChanged)));
         public static readonly DependencyProperty NumericIntegerProperty = DependencyProperty.Register("C_NumericInteger", typeof(bool), typeof(CTextBox), new PropertyMetadata(new PropertyChangedCallback(NumericIntegerValueChanged)));
+
+        /// <summary>
+        /// decides if your textbox NumericProperty (which means you can only input double if NumericIntegerProperty is false) accepts a dot as a decimal point instead of your local language syntax
+        /// </summary>
         public static readonly DependencyProperty NumericDoubleDotProperty = DependencyProperty.Register("C_NumericDoubleDot", typeof(bool), typeof(CTextBox), new PropertyMetadata(new PropertyChangedCallback(NumericDoubleDotValueChanged)));
 
         public static readonly DependencyProperty WatermarkProperty = DependencyProperty.Register("C_Watermark", typeof(string), typeof(CTextBox), new PropertyMetadata(new PropertyChangedCallback(WatermarkValueChanged)));
@@ -29,21 +33,9 @@ namespace Cosmos
         
         public CultureInfo culture = new CultureInfo("de");
 
-        //public new string Text
-        //{
-        //    set
-        //    {
-        //        base.Text = value;
-        //    }
-        //    get
-        //    {
-        //        if (isEmpty && (C_Watermark != "" || C_Watermark != string.Empty || C_Watermark != null))
-        //            return string.Empty;
-        //        else
-        //            return base.Text;
-        //    }
-        //}
-
+        /// <summary>
+        /// customized textbox in style, with lots of new features
+        /// </summary>
         static CTextBox()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(CTextBox), new FrameworkPropertyMetadata(typeof(CTextBox)));

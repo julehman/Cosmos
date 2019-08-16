@@ -13,6 +13,9 @@ namespace Cosmos
     {
         public static readonly DependencyProperty ForegroundThemeProperty = DependencyProperty.Register("C_ForegroundTheme", typeof(Theme), typeof(CComboBox), new PropertyMetadata(new PropertyChangedCallback(ForegroundThemeValueChanged)));
 
+        /// <summary>
+        /// customized combobox in style, no extra features
+        /// </summary>
         static CComboBox()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(CComboBox), new FrameworkPropertyMetadata(typeof(CComboBox)));

@@ -15,6 +15,9 @@ namespace Cosmos
         public static readonly DependencyProperty ButtonTextProperty = DependencyProperty.Register("C_ButtonText", typeof(string), typeof(CIconTextVerticalButton), new PropertyMetadata(new PropertyChangedCallback(ButtonTextValueChanged)));
         public static new readonly DependencyProperty IsEnabledProperty = DependencyProperty.Register("IsEnabled", typeof(bool), typeof(CIconTextVerticalButton), new PropertyMetadata(true, OnIsEnabledChanged));
 
+        /// <summary>
+        /// a button consisting of an icon and text aligned above/beneath each other
+        /// </summary>
         static CIconTextVerticalButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(CIconTextVerticalButton), new FrameworkPropertyMetadata(typeof(CIconTextVerticalButton)));

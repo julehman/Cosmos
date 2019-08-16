@@ -9,6 +9,9 @@ namespace Cosmos
         public static readonly DependencyProperty BackgroundThemeProperty = DependencyProperty.Register("C_BackgroundTheme", typeof(Theme), typeof(CToggle), new PropertyMetadata(new PropertyChangedCallback(BackgroundValueChanged)));
         public static readonly DependencyProperty CheckedThemeProperty = DependencyProperty.Register("C_CheckedTheme", typeof(Theme), typeof(CToggle), new PropertyMetadata(new PropertyChangedCallback(CheckedValueChanged)));
 
+        /// <summary>
+        /// styled ToggleButton, its like a CheckBox but with an android style and feeling
+        /// </summary>
         static CToggle()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(CToggle), new FrameworkPropertyMetadata(typeof(CToggle)));

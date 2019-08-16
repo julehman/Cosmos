@@ -1,14 +1,14 @@
-﻿using System;
-using System.Threading;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
 using static Cosmos.Classes.CColor;
 
 namespace Cosmos
 {
+    /// <summary>
+    /// customized button in style, no extra features
+    /// </summary>
     public class CButton : Button
     {
         public static readonly DependencyProperty BackgroundThemeProperty = DependencyProperty.Register("C_BackgroundTheme", typeof(Theme), typeof(CButton), new PropertyMetadata(new PropertyChangedCallback(BackgroundValueChanged)));
@@ -22,12 +22,8 @@ namespace Cosmos
             get { return backcolor; }
             set
             {
-                //every element has changed true after that? wtf?
-                //if (!Backgroundchanged)
-                //{
-                    backcolor = value;
-                    Backgroundchanged = true;
-                //}
+                backcolor = value;
+                Backgroundchanged = true;
             }
         }
 
@@ -36,9 +32,6 @@ namespace Cosmos
             DefaultStyleKeyProperty.OverrideMetadata(typeof(CButton), new FrameworkPropertyMetadata(typeof(CButton)));
         }
 
-        /// <summary>
-        /// There is still a bug with the C_BackgroundTheme property. If you want to change it in the code, or during runtime, make sure to set Backgroundchanged to false
-        /// </summary>
         public Theme C_BackgroundTheme
         {
             get
@@ -79,6 +72,8 @@ namespace Cosmos
             control.Foreground = GetColorBrush((Theme)e.NewValue);
         }
 
+        //temporarily commented because there is an issue with the change of the background color when button calls a window.. very strange
+
         protected override void OnMouseEnter(MouseEventArgs e)
         {
             //Backcolor = this.Background.ToString();
@@ -117,43 +112,5 @@ namespace Cosmos
         {
             base.OnClick();
         }
-
-
-
-        //Button gets darker when pressed
-
-        //protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
-        //{
-        //    base.OnMouseLeftButtonDown(e);
-        //    ColorAnimation colorChangeAnimation = new ColorAnimation
-        //    {
-        //        To = ChangeColorBrightness((Color)ColorConverter.ConvertFromString(backcolor), (float)-0.1),
-        //        Duration = new Duration(new TimeSpan(0, 0, 0, 0, 100))
-        //    };
-
-        //    PropertyPath colorTargetPath = new PropertyPath("(Background).(SolidColorBrush.Color)");
-        //    Storyboard CellBackgroundChangeStory = new Storyboard();
-        //    Storyboard.SetTarget(colorChangeAnimation, this);
-        //    Storyboard.SetTargetProperty(colorChangeAnimation, colorTargetPath);
-        //    CellBackgroundChangeStory.Children.Add(colorChangeAnimation);
-        //    CellBackgroundChangeStory.Begin();
-        //}
-
-        //protected override void OnMouseLeftButtonUp(MouseButtonEventArgs e)
-        //{
-        //    base.OnMouseLeftButtonUp(e);
-        //    ColorAnimation colorChangeAnimation = new ColorAnimation
-        //    {
-        //        To = ChangeColorBrightness((Color)ColorConverter.ConvertFromString(backcolor), (float)0.15),
-        //        Duration = new Duration(new TimeSpan(0, 0, 0, 0, 100))
-        //    };
-
-        //    PropertyPath colorTargetPath = new PropertyPath("(Background).(SolidColorBrush.Color)");
-        //    Storyboard CellBackgroundChangeStory = new Storyboard();
-        //    Storyboard.SetTarget(colorChangeAnimation, this);
-        //    Storyboard.SetTargetProperty(colorChangeAnimation, colorTargetPath);
-        //    CellBackgroundChangeStory.Children.Add(colorChangeAnimation);
-        //    CellBackgroundChangeStory.Begin();
-        //}
     }
 }

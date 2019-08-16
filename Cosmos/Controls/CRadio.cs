@@ -11,6 +11,9 @@ namespace Cosmos
         public static readonly DependencyProperty CheckedThemeProperty = DependencyProperty.Register("C_CheckedTheme", typeof(Theme), typeof(CRadio), new PropertyMetadata(new PropertyChangedCallback(CheckedValueChanged)));
         public static readonly DependencyProperty ForegroundThemeProperty = DependencyProperty.Register("C_ForegroundTheme", typeof(Theme), typeof(CRadio), new PropertyMetadata(new PropertyChangedCallback(ForegroundValueChanged)));
 
+        /// <summary>
+        /// customized radio-button in style, no extra features
+        /// </summary>
         static CRadio()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(CRadio), new FrameworkPropertyMetadata(typeof(CRadio)));

@@ -10,7 +10,10 @@ namespace Cosmos
         public static readonly DependencyProperty FrameThemeProperty = DependencyProperty.Register("C_FrameTheme", typeof(Theme), typeof(CCheckBox), new PropertyMetadata(new PropertyChangedCallback(FrameValueChanged)));
         public static readonly DependencyProperty CheckedThemeProperty = DependencyProperty.Register("C_CheckedTheme", typeof(Theme), typeof(CCheckBox), new PropertyMetadata(new PropertyChangedCallback(CheckedValueChanged)));
         public static readonly DependencyProperty ForegroundThemeProperty = DependencyProperty.Register("C_ForegroundTheme", typeof(Theme), typeof(CCheckBox), new PropertyMetadata(new PropertyChangedCallback(ForegroundValueChanged)));
-        
+     
+        /// <summary>
+        /// customized checkbox in style, no extra features
+        /// </summary>
         static CCheckBox()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(CCheckBox), new FrameworkPropertyMetadata(typeof(CCheckBox)));

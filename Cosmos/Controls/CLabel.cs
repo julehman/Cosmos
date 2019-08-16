@@ -8,6 +8,9 @@ namespace Cosmos
     {
         public static readonly DependencyProperty ForegroundThemeProperty = DependencyProperty.Register("C_ForegroundTheme", typeof(Theme), typeof(CLabel), new PropertyMetadata(new PropertyChangedCallback(ForegroundThemeValueChanged)));
 
+        /// <summary>
+        /// customized label in style, no extra features
+        /// </summary>
         static CLabel()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(CLabel), new FrameworkPropertyMetadata(typeof(CLabel)));

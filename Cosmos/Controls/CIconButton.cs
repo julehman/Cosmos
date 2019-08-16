@@ -14,7 +14,9 @@ namespace Cosmos
         public static readonly DependencyProperty ButtonTypeProperty = DependencyProperty.Register("C_ButtonType", typeof(CImage.ImageType), typeof(CIconButton), new PropertyMetadata(new PropertyChangedCallback(ButtonTypeValueChanged)));
         public static new readonly DependencyProperty IsEnabledProperty = DependencyProperty.Register("IsEnabled", typeof(bool), typeof(CIconButton), new PropertyMetadata(true, OnIsEnabledChanged));
 
-
+        /// <summary>
+        /// a button consisting of an simple icon
+        /// </summary>
         static CIconButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(CIconButton), new FrameworkPropertyMetadata(typeof(CIconButton)));

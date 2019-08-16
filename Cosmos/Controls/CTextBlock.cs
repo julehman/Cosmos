@@ -8,6 +8,9 @@ namespace Cosmos
     {
         public static readonly DependencyProperty ForegroundThemeProperty = DependencyProperty.Register("C_ForegroundTheme", typeof(Theme), typeof(CTextBlock), new PropertyMetadata(new PropertyChangedCallback(ForegroundThemeValueChanged)));
 
+        /// <summary>
+        /// customized textblock in style, no extra features
+        /// </summary>
         static CTextBlock()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(CTextBlock), new FrameworkPropertyMetadata(typeof(CTextBlock)));

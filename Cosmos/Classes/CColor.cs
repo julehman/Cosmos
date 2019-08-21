@@ -10,6 +10,7 @@ namespace Cosmos.Classes
             
             Teal,
             Red,
+            Blue,
             HKS41,
             HKS44,
             Yellow,
@@ -39,6 +40,8 @@ namespace Cosmos.Classes
                     return "#FF2c736b";
                 case Theme.Red:
                     return "#FFCB2030";
+                case Theme.Blue:
+                    return "#FF007ACC";
                 case Theme.HKS41:
                     return "#FF00305d";
                 case Theme.HKS44:

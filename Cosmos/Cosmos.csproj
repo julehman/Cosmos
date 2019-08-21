@@ -55,6 +55,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UCs\CWindowHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ResourceDictionaries\CIconButtonDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -160,6 +164,9 @@
     <Compile Include="Controls\CTextBlock.cs" />
     <Compile Include="Controls\CTextBox.cs" />
     <Compile Include="Controls\CToggle.cs" />
+    <Compile Include="UCs\CWindowHeader.xaml.cs">
+      <DependentUpon>CWindowHeader.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UCs\CPicker.xaml.cs">
       <DependentUpon>CPicker.xaml</DependentUpon>
     </Compile>

@@ -3,6 +3,8 @@
                     xmlns:local="clr-namespace:Cosmos">
 
     <Style TargetType="{x:Type local:CTabItem}">
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TabItem">

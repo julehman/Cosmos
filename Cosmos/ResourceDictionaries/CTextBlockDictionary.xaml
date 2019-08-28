@@ -4,6 +4,7 @@
 
     <Style TargetType="{x:Type local:CTextBlock}">
         <Setter Property="FontSize" Value="14"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
         <Setter Property="Foreground" Value="#FF111111"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cosmos.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
@@ -20,7 +21,7 @@ namespace Cosmos.Classes
             client.UseDefaultCredentials = false;
             client.Credentials = new System.Net.NetworkCredential(senderEmail, senderPassword);
 
-            MailMessage mm = new MailMessage("bugreport.mailservice@gmail.com", addresseeEmail, caption, text);
+            MailMessage mm = new MailMessage(senderEmail, addresseeEmail, caption, text);
 
             mm.BodyEncoding = UTF8Encoding.UTF8;
             mm.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
@@ -30,8 +31,10 @@ namespace Cosmos.Classes
                 client.Send(mm);
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
+                //CMessageBox message = new CMessageBox(ex.Message, "Error", CColor.Theme.Red, CImage.ImageType.error_outline_black, CMessageBox.CMessageBoxButton.OK);
+                //message.ShowDialog();
                 return false;
             }
         }

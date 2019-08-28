@@ -104,7 +104,7 @@
 
                                 <Border BorderThickness="2" CornerRadius="2" BorderBrush="#ffeeeeee" Margin="0,5,0,0">
                                     <ScrollViewer SnapsToDevicePixels="True" BorderBrush="Blue">
-                                        <StackPanel MaxHeight="100" IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" Background="#ffeeeeee"/>
+                                        <StackPanel MaxHeight="300" IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" Background="#ffeeeeee"/>
                                     </ScrollViewer>
                                 </Border>
                             </Grid>

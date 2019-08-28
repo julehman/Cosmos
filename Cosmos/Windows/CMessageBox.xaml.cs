@@ -28,11 +28,12 @@ namespace Cosmos.Windows
         }
 
         public CMessageBoxResult result = CMessageBoxResult.None;
-        private CMessageBoxButton buttonType;
+        private readonly CMessageBoxButton buttonType;
 
         public CMessageBox(string message, string caption, CColor.Theme theme, CImage.ImageType image, CMessageBoxButton _buttonType)
         {
             InitializeComponent();
+            this.SizeToContent = SizeToContent.Height;
             SystemSounds.Beep.Play();
 
             //set image
@@ -47,12 +48,11 @@ namespace Cosmos.Windows
 
             //set text / caption
             TBL_message.Text = message;
-            L_caption.Content = caption;
+            windowheader.C_HeaderText = caption;
 
             //set theme in border and header background
             GRD_border.Background = CColor.GetColorBrush(theme);
-            GRD_header.Background = CColor.GetColorBrush(theme);
-
+            windowheader.C_BackgroundTheme = theme;
 
             //enable button by given buttontype
             buttonType = _buttonType;

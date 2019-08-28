@@ -10,6 +10,7 @@ namespace Cosmos
     {
         public enum HeaderType
         {
+            None,
             Close,
             Close_Minimize,
             Close_Minimize_Maximize,

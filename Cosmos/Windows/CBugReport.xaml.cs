@@ -37,7 +37,8 @@ namespace Cosmos.Windows
             TB_email.Text = email;
             TB_version.Text = version;
             TB_product.Text = product;
-            //todo: try to get current os and select in cb
+
+            SelectOS();
         }
         public CBugReport(string _addresseeEmail, string _senderEmail, string _senderPassword, string email, string version, string product)
         {
@@ -50,9 +51,35 @@ namespace Cosmos.Windows
             TB_email.Text = email;
             TB_version.Text = version;
             TB_product.Text = product;
-            //todo: try to get current os and select in cb
 
+            SelectOS();
+        }
 
+        private void SelectOS()
+        {
+            OperatingSystem os_info = System.Environment.OSVersion;
+            string os = GetOsName(os_info);
+
+            for (int i = 0; i < CB_os.Items.Count; i++)
+                if ((CB_os.Items[i] as ComboBoxItem).Content.ToString() == os)
+                    CB_os.SelectedIndex = i;
+        }
+
+        private string GetOsName(OperatingSystem os_info)
+        {
+            string version =
+                os_info.Version.Major.ToString() + "." +
+                os_info.Version.Minor.ToString();
+            switch (version)
+            {
+                case "10.0": return "Windows 10";
+                case "6.3": return "Windows 8.1";
+                case "6.2": return "Windows 8";
+                case "6.1": return "Windows 7";
+                case "6.0": return "Windows Vista";
+                case "5.1": return "Windows XP";
+            }
+            return "";
         }
 
         private void Rectangle_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

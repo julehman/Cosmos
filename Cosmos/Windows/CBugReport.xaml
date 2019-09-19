@@ -21,7 +21,7 @@
             <Cosmos:CLabel HorizontalAlignment="Stretch" Margin="15,48,15,0" VerticalAlignment="Top" Height="28" Content="Problembeschreibung*" Width="Auto" Grid.ColumnSpan="2"/>
             <Cosmos:CLabel HorizontalAlignment="Stretch" Margin="15,302,15,0" VerticalAlignment="Top" Height="28" Content="Betriebssystem*" Width="Auto" Grid.ColumnSpan="2"/>
             <Cosmos:CComboBox x:Name="CB_os" HorizontalAlignment="Left" Margin="15,335,0,0" VerticalAlignment="Top" Width="416" Height="30" Grid.ColumnSpan="2">
-                <ComboBoxItem Content="Windows  10"/>
+                <ComboBoxItem Content="Windows 10"/>
                 <ComboBoxItem Content="Windows 8.1"/>
                 <ComboBoxItem Content="Windows 8"/>
                 <ComboBoxItem Content="Windows 7"/>

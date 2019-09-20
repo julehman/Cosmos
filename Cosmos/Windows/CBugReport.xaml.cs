@@ -10,7 +10,7 @@ namespace Cosmos.Windows
     public partial class CBugReport : Window
     {
         private bool database = false;
-        //uvz569ztui
+
         private string senderEmail;
         private string senderPassword;
         private string addresseeEmail;

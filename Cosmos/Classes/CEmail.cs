@@ -10,7 +10,6 @@ namespace Cosmos.Classes
 {
     public static class CEmail
     {
-        //
         public static bool SendEmail(string addresseeEmail, string senderEmail, string senderPassword, string caption, string text)
         {
             SmtpClient client = new SmtpClient();

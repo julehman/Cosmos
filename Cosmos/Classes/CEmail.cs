@@ -12,29 +12,31 @@ namespace Cosmos.Classes
     {
         public static bool SendEmail(string addresseeEmail, string senderEmail, string senderPassword, string caption, string text)
         {
-            SmtpClient client = new SmtpClient();
-            client.Port = 587;
-            client.Host = "smtp.gmail.com";
-            client.EnableSsl = true;
-            client.Timeout = 10000;
-            client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.UseDefaultCredentials = false;
-            client.Credentials = new System.Net.NetworkCredential(senderEmail, senderPassword);
-
-            MailMessage mm = new MailMessage(senderEmail, addresseeEmail, caption, text);
-
-            mm.BodyEncoding = UTF8Encoding.UTF8;
-            mm.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
-
+            SmtpClient client = new SmtpClient
+            {
+                Port = 587,
+                Host = "smtp.gmail.com",
+                EnableSsl = true,
+                Timeout = 10000,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new System.Net.NetworkCredential(senderEmail, senderPassword)
+            };
             try
             {
+                MailMessage mm = new MailMessage(senderEmail, addresseeEmail, caption, text)
+                {
+                    BodyEncoding = UTF8Encoding.UTF8,
+                    DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure
+                };
+
                 client.Send(mm);
                 return true;
             }
             catch (Exception ex)
             {
-                //CMessageBox message = new CMessageBox(ex.Message, "Error", CColor.Theme.Red, CImage.ImageType.error_outline_black, CMessageBox.CMessageBoxButton.OK);
-                //message.ShowDialog();
+                CMessageBox message = new CMessageBox(ex.Message, "Error", CColor.Theme.Red, CImage.ImageType.error_outline_black, CMessageBox.CMessageBoxButton.OK);
+                message.ShowDialog();
                 return false;
             }
         }

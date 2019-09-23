@@ -67,7 +67,6 @@ namespace Cosmos.Windows
             TB_version.Text = version;
             TB_product.Text = product;
 
-            GLADROW = true;
             SelectOS();
         }
 

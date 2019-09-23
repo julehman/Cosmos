@@ -22,20 +22,21 @@ namespace Cosmos.Classes
                 UseDefaultCredentials = false,
                 Credentials = new System.Net.NetworkCredential(senderEmail, senderPassword)
             };
+
+            MailMessage mm = new MailMessage(senderEmail, addresseeEmail, caption, text)
+            {
+                BodyEncoding = UTF8Encoding.UTF8,
+                DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure
+            };
+
             try
             {
-                MailMessage mm = new MailMessage(senderEmail, addresseeEmail, caption, text)
-                {
-                    BodyEncoding = UTF8Encoding.UTF8,
-                    DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure
-                };
-
                 client.Send(mm);
                 return true;
             }
             catch (Exception ex)
             {
-                CMessageBox message = new CMessageBox(ex.Message, "Error", CColor.Theme.Red, CImage.ImageType.error_outline_black, CMessageBox.CMessageBoxButton.OK);
+                CMessageBox message = new CMessageBox(ex.Message, "Error sending email", CColor.Theme.Red, CImage.ImageType.error_outline_black, CMessageBox.CMessageBoxButton.OK);
                 message.ShowDialog();
                 return false;
             }

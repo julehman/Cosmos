@@ -10,11 +10,12 @@ namespace Cosmos.Windows
     public partial class CBugReport : Window
     {
         private bool database = false;
-
+        private bool GLADROW = false;
         private string senderEmail;
         private string senderPassword;
-        private string addresseeEmail;
 
+
+        private string[] addresseeEmailArray;
         private static string supportDBPath = "";
         private static OleDbCommand dbCommand;
         //private static OleDbDataAdapter dbDataAdapter;
@@ -46,7 +47,7 @@ namespace Cosmos.Windows
 
             senderEmail = _senderEmail;
             senderPassword = _senderPassword;
-            addresseeEmail = _addresseeEmail;
+            addresseeEmailArray = new string[] { _addresseeEmail };
 
             TB_email.Text = email;
             TB_version.Text = version;
@@ -54,6 +55,23 @@ namespace Cosmos.Windows
 
             SelectOS();
         }
+
+        public CBugReport(string[] _addresseeEmailArray, string _senderEmail, string _senderPassword, string email, string version, string product)
+        {
+            InitializeComponent();
+
+            senderEmail = _senderEmail;
+            senderPassword = _senderPassword;
+            addresseeEmailArray = _addresseeEmailArray;
+
+            TB_email.Text = email;
+            TB_version.Text = version;
+            TB_product.Text = product;
+
+            GLADROW = true;
+            SelectOS();
+        }
+
 
         private void SelectOS()
         {
@@ -89,6 +107,7 @@ namespace Cosmos.Windows
 
         private void B_send_Click(object sender, RoutedEventArgs e)
         {
+          
             //add bugeport to database
             if (database)
             {
@@ -129,7 +148,9 @@ namespace Cosmos.Windows
                 if (CB_impact.SelectedIndex >= 0)
                     impact = (CB_impact.SelectedItem as ComboBoxItem).Content.ToString();
 
-                CEmail.SendEmail(addresseeEmail, senderEmail, senderPassword, "Fehlermeldung", TB_email.Text + "\n" +
+                foreach (string addresseeEmail in addresseeEmailArray)
+                {
+                    CEmail.SendEmail(addresseeEmail, senderEmail, senderPassword, "Fehlermeldung", TB_email.Text + "\n" +
                                                                                                DateTime.Today + "\n" +
                                                                                                TB_description.Text + "\n" +
                                                                                                CB_os.Text + "\n" +
@@ -137,6 +158,7 @@ namespace Cosmos.Windows
                                                                                                TB_version.Text + "\n" +
                                                                                                impact + "\n" +
                                                                                                TB_product.Text);
+                }
 
             }
 
